@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <h1>Mars Analysis</h1>
+  <button type="button">Scrape New Data</button>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+        <h2>Latest Mars News</h2>
+      <h4>{{mars.news_title}}</h4>
+      <p>{{mars.news_p}}</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Current Mars Weather</h3>
+        <p>{{mars.tweet_scraped}}</p>
+    </div>
+  </div>
+    <div class="row">
+    <div class="col-sm-4">
+      <h2>Featured mars image</h2>
+        <img src="{{mars.image_scraped}}" width="200" height="250">
+    </div>
+         <div class="col-sm-4">
+              <h3>Mars Facts</h3>
+      {{table_scraped}}
+  </div>
+</div>
+     <div class="row">
+    <div class="col-sm-4">
+        {% for item in mars.hemispheres %}
+           <h3>{{item.title}}</h3>
+      <img src="{{item.img_url}}" width="200" height="250">
+        {%endfor%}
+    </div>
+     </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
